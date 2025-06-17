@@ -29,7 +29,9 @@
 ## About The Project
 
 This guide provides instructions on how to set up and run a Node.js script for interacting with Roblox groups using the `noblox.js` library. This script is designed to perform specific actions related to group audit logs.
+
 This script will undo any action by a user in a Roblox group within a specific timeframe.
+It should be used to undo any "Admin Abuse" to any of your Roblox groups.
 
 ### Built With
 * [Node.js](https://nodejs.org/) - A JavaScript runtime environment.
