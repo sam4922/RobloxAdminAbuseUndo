@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sam4922/ai-helper-script/refs/heads/master/ezgif-2129acc836f77b.gif" alt="screenshot">
+  <img src="https://imgur.com/a/SkTWlJY" alt="screenshot">
 </p>
 
 ## About The Project
