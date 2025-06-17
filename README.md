@@ -22,12 +22,14 @@
 </p>
 
 <p align="center">
-  <img src="https://imgur.com/a/SkTWlJY" alt="screenshot">
+<img width="658" alt="Screenshot 2025-06-16 at 11 50 38 PM" src="https://github.com/user-attachments/assets/3feceb63-1bbc-455d-ad56-6abde645d8fc" />
+ 
 </p>
 
 ## About The Project
 
-This guide provides instructions on how to set up and run a Node.js script for interacting with Roblox groups using the `noblox.js` library. This script is designed to perform specific actions related to group audit logs.
+This guide provides instructions on how to set up and run a Node.js script for interacting with ![Uploading Screenshot 2025-06-16 at 11.50.38 PM.png…]()
+Roblox groups using the `noblox.js` library. This script is designed to perform specific actions related to group audit logs.
 
 ### Built With
 * [Node.js](https://nodejs.org/) - A JavaScript runtime environment.
