@@ -3,6 +3,15 @@
   Roblox AA Script Runner
   <br>
 </h1>
+<p align="center">
+  
+  <a href="https://badge.fury.io/js/electron-markdownify">
+    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+         alt="Gitter">
+  </a>
+ 
+</p>
+
 
 <h4 align="center">A Node.js script to manage Roblox group audit logs.</h4>
 
@@ -10,6 +19,10 @@
   <a href="#getting-started">Getting Started</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sam4922/ai-helper-script/refs/heads/master/ezgif-2129acc836f77b.gif" alt="screenshot">
 </p>
 
 ## About The Project
