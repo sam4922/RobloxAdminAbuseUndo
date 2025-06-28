@@ -3,20 +3,20 @@ const noblox = require('noblox.js');
 // --- Configuration ---
 const groupId = 33444525;
 const personDoingTheAbuse = 3795958810;
-const iterations = 100; // Increased iterations just in case
+const iterations = 100; 
 const cutoffDateString = "2021-04-10T12:00:00.000Z"; // Use YYYY-MM-DD format for safety
 const logsPerPage = 50;
 const requestDelayMs = 150;
 const pageFetchDelayMs = 250;
-const PRINT_DETAILED_LOGS = true; // Keep detailed logging enabled
+const PRINT_DETAILED_LOGS = true; 
 
 // --- Calculate cutoffTime and VALIDATE ---
 const cutoffTime = new Date(cutoffDateString).getTime();
-console.log(`[DEBUG] Initial cutoffTime value (ms since epoch): ${cutoffTime}`); // Log the value
+console.log(`[DEBUG] Initial cutoffTime value (ms since epoch): ${cutoffTime}`); 
 if (isNaN(cutoffTime)) {
     console.error(`\n❌ FATAL ERROR: The cutoffDateString "${cutoffDateString}" is invalid.`);
     console.error("   Please ensure it follows the format: YYYY-MM-DDTHH:mm:ss.sssZ");
-    process.exit(1); // Exit immediately if date is bad
+    process.exit(1);
 }
 // --- End Validation ---
 
@@ -54,10 +54,8 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
  */
 async function fetchAuditLogs() {
     console.log(" =====\n");
-    // *** CORRECTED TYPO BELOW ***
     console.log(`Workspaceing audit logs for group ${groupId}, user ${personDoingTheAbuse}, action 'ChangeRank'.`);
     console.log(`Will stop after ${iterations} pages or when logs end.`);
-    // This line is now safe because we validated cutoffTime earlier
     console.log(`Filtering logs created after: ${new Date(cutoffTime).toISOString()}`);
     if (PRINT_DETAILED_LOGS) {
         console.log("Detailed log printing is ENABLED.");
@@ -94,15 +92,14 @@ async function fetchAuditLogs() {
 
             let addedCount = 0;
             logs.forEach(log => {
-                // Ensure log.created is valid before parsing
                 if (!log.created) {
                      console.warn(`   ⚠️ Skipping log entry due to missing 'created' timestamp: ${JSON.stringify(log)}`);
-                     return; // Skip this log entry
+                     return; 
                 }
                 const logTime = new Date(log.created).getTime();
                  if (isNaN(logTime)) {
                      console.warn(`   ⚠️ Skipping log entry due to invalid 'created' timestamp (${log.created}): ${JSON.stringify(log)}`);
-                     return; // Skip this log entry
+                     return; 
                  }
 
                 if (logTime > cutoffTime) {
@@ -143,7 +140,7 @@ async function fetchAuditLogs() {
 
         } catch (error) {
             console.error(`❌ Error fetching logs during iteration ${pageNum}:`, error.message);
-            console.error(`   Cursor used for failed request: '${nextCursor}'`); // This might be misleading if error is before setting next cursor
+            console.error(`   Cursor used for failed request: '${nextCursor}'`);
 
             console.error('\n   --- Full Error Object ---');
             console.error(error);
@@ -176,7 +173,6 @@ async function fetchAuditLogs() {
 /**
  * ===== Revert Ranks =====
  */
-// (Keep the revertRanks function exactly as it was in the previous version)
 async function revertRanks() {
     console.log(" =====\n");
 
@@ -201,7 +197,6 @@ async function revertRanks() {
                     resolve({ status: 'fulfilled', user: item.name });
                 } catch (error) {
                     console.error(`   ❌ ${logPrefix} Failed for ${item.name}: ${error.message}`);
-                    // Log more details if available
                     if (error.response) {
                         console.error(`      Status: ${error.response.status}, Data:`, error.response.data);
                     } else {
